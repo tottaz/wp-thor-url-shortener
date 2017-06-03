@@ -1,0 +1,683 @@
+
+/**
+ * Default Widget Stylesheet
+ **/
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}  
+#Thor_main {
+	margin: 0;
+	background: #fff;
+}
+#Thor_main #Thor_message {	
+	background: #fff;
+	display: none;
+	color: #000;
+	padding: 2px 5px;
+	margin-bottom: 10px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+#Thor_main #Thor_message.Thor_error{
+	background: #FF7979;	
+}
+#Thor_main #Thor_title{
+
+}
+#Thor_main #Thor_form{
+	border: 1px solid #ccc;
+}
+#Thor_main #Thor_form #Thor_main_input{
+	position: relative;
+	min-height: 30px;
+}
+#Thor_main #Thor_form #Thor_main_input > label {
+	display: none;
+}
+
+#Thor_main #Thor_main_input input {
+	outline: none;
+	margin: 0;
+	width: 100%;
+	min-height: 30px;
+	padding: 10px 90px 10px 10px !important;
+	line-height: 25px;
+	font-size: 20px;
+	background: transparent;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #eee;
+	color: #666;
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;			
+	transition: all 0.5s linear;
+	-webkit-transition: all 0.5s linear;
+	-o-transition: all 0.5s linear;
+	-ms-transition: all 0.5s linear;
+	-moz-transition: all 0.5s linear;	
+}
+#Thor_main #Thor_main_input input:hover{
+	background: #f8f8f8;
+	color: #999;
+	border-color: #32a0ee;
+}
+#Thor_main #Thor_main_input #Thor_loading{
+	position: absolute;
+	display: none;
+	right: 15px;
+	top: 12px;
+	width: 40px;
+	height: 24px;	
+	text-indent: -9999px;
+	background: #fff url("../images/loader.gif") no-repeat 4px 3px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;		
+}
+#Thor_main #Thor_main_input button{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	border: 0;
+	padding: 5px 10px !important;
+	background: #32a0ee;
+	color: #fff;
+	font-weight: 700;
+	cursor: pointer;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;		
+	transition: all 0.5s linear;
+	-webkit-transition: all 0.5s linear;
+	-o-transition: all 0.5s linear;
+	-ms-transition: all 0.5s linear;
+	-moz-transition: all 0.5s linear;		
+}
+#Thor_main #Thor_main_input button:hover{
+	background: #6AB9F2;
+}
+#Thor_main #Thor_main_input button:focus{
+	background: #1383D5;
+}
+#Thor_main #Thor_custom_container {
+	color: #666;
+	padding: 10px;	
+	font-size: 13px;
+	overflow: hidden;
+}
+#Thor_main #Thor_custom_container a{
+	color: #fff;
+	background: #32a0ee;
+	padding: 2px 8px;
+	display: inline-block;
+	text-decoration: none;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;		
+}
+#Thor_main #Thor_custom_container #PU_custom_input_container{
+	float: left;
+}
+#Thor_main #Thor_custom_container  #PU_custom_input_container > label{
+	margin-bottom: 5px;
+	display: block;
+	font-weight: 700;
+}
+#Thor_main #Thor_custom_container  #PU_custom_input_container > span {
+	display: none;
+}
+
+#Thor_main #Thor_custom_container #Thor_custom_input {
+	background: transparent;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	padding: 8px 10px !important;
+	border-bottom: 1px dotted #ccc;
+	font-size: 13px;	
+	transition: all 0.5s linear;
+	-webkit-transition: all 0.5s linear;
+	-o-transition: all 0.5s linear;
+	-ms-transition: all 0.5s linear;
+	-moz-transition: all 0.5s linear;		
+}
+#Thor_main #Thor_custom_container #Thor_custom_input:hover {
+	border-color: #32a0ee;
+}
+#Thor_main #Thor_custom_container button{
+	outline: none;
+	float: right;
+	margin-top: 10px;
+	border: 0;
+	padding: 10px;
+	height: auto;
+	line-height: 15px;
+	font-size: 12px;
+	background: #32a0ee;
+	color: #fff;
+	font-weight: 700;
+	cursor: pointer;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;		
+	transition: all 0.5s linear;
+	-webkit-transition: all 0.5s linear;
+	-o-transition: all 0.5s linear;
+	-ms-transition: all 0.5s linear;
+	-moz-transition: all 0.5s linear;		
+}
+#Thor_main #Thor_custom_container button:hover{
+	background: #6AB9F2;
+}
+#Thor_main #Thor_custom_container button:active{
+	border: 0;	
+	background: #1383D5;
+}
+#Thor_main.widget_fix #Thor_main_input input{
+	padding: 10px !important;
+}
+#Thor_main.widget_fix #Thor_custom_container > span {
+	display: none;
+}	
+#Thor_main.widget_fix #Thor_custom_container #Thor_custom_input{
+	padding: 5px 10px 5px 5px;
+	width: 100%;
+}
+#Thor_main.widget_fix #Thor_custom_container button{
+	display: block;
+	position: relative;
+	top:0;
+	right:0;
+	width: 100%;
+	margin-top: 10px;
+}
+#Thor_main.widget_fix #Thor_main_input #Thor_loading{
+	display: none;
+}
+@media screen and (max-width:480px){
+	#Thor_main #Thor_main_input input{
+		padding: 10px;
+	}
+	#Thor_main #Thor_custom_container > span {
+		display: none;
+	}	
+	#Thor_main #Thor_custom_container #Thor_custom_input{
+		padding: 5px 10px 5px 5px;
+		width: 100%;
+	}
+	#Thor_main #Thor_custom_container button{
+		display: block;
+		position: relative;
+		top:0;
+		right:0;
+		width: 100%;
+		margin-top: 10px;
+	}
+	#Thor_main #Thor_main_input #Thor_loading{
+		display: none;
+	}
+}
+/**
+ * Gray-Blue Widget Stylesheet
+ * KBRmedia - http://gempixel.com
+ **/
+#Thor_main.gb-c {
+	margin: 0;
+	background: transparent;
+}
+#Thor_main.gb-c #Thor_message {	
+	
+}
+#Thor_main.gb-c #Thor_title{
+
+}
+#Thor_main.gb-c #Thor_form{
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;		
+	border: 1px solid #4e5968;
+}
+#Thor_main.gb-c #Thor_form #Thor_main_input{
+	min-height: 30px;
+}
+#Thor_main.gb-c #Thor_form #Thor_main_input > label {
+	display: none;
+}
+
+#Thor_main.gb-c #Thor_main_input input {
+	background: #4e5968;
+	border: 2px solid #4e5968;
+	color: #fff;
+}
+#Thor_main.gb-c #Thor_main_input input:hover{
+	background: #5F6C7E;
+	border-color:#16a085;
+}
+#Thor_main.gb-c #Thor_main_input #Thor_loading{
+
+}
+#Thor_main.gb-c #Thor_main_input button{
+	background: #16a085;
+}
+#Thor_main.gb-c #Thor_main_input button:hover{
+	background: #48c9b0;
+}
+#Thor_main.gb-c #Thor_main_input button:focus{
+	background: #31A891;
+}
+#Thor_main.gb-c #Thor_custom_container {
+	background: #eff0f2;
+	color: #34495e;
+}
+#Thor_main.gb-c #Thor_custom_container > label{
+	display: block;
+	font-weight: 700;
+}
+#Thor_main.gb-c #Thor_custom_container > span {
+}
+
+#Thor_main.gb-c #Thor_custom_container #Thor_custom_input {
+	background: #34495e;
+	color: #fff;
+	border-bottom: 0;	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;		
+}
+#Thor_main.gb-c #Thor_custom_container #Thor_custom_input:hover {
+	border-color: #32a0ee;
+}
+#Thor_main.gb-c #Thor_custom_container button{
+	background: #16a085;	
+}
+#Thor_main.gb-c #Thor_custom_container button:hover{
+	background: #48c9b0;
+}
+#Thor_main.gb-c #Thor_custom_container button:active{
+	background: #31A891;
+}
+/**
+ * Dark Blue Widget Stylesheet
+ * KBRmedia - http://gempixel.com
+ **/
+#Thor_main.db-c {
+	margin: 0;
+	background: transparent;
+}
+#Thor_main.db-c #Thor_message {	
+}
+#Thor_main.db-c #Thor_title{
+
+}
+#Thor_main.db-c #Thor_form{
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;		
+	border: 1px solid #4e5968;
+}
+#Thor_main.db-c #Thor_form #Thor_main_input{
+	min-height: 30px;
+}
+#Thor_main.db-c #Thor_form #Thor_main_input > label {
+	display: none;
+}
+
+#Thor_main.db-c #Thor_main_input input {
+	background: #2c3e50 ;
+	border: 1px solid #4e5968;
+	color: #fff;
+}
+#Thor_main.db-c #Thor_main_input input:hover{
+	background: #5F6C7E;
+	border-color:#1ABC9C;
+}
+#Thor_main.db-c #Thor_main_input #Thor_loading{
+
+}
+#Thor_main.db-c #Thor_main_input button{
+	background: #16a085;
+}
+#Thor_main.db-c #Thor_main_input button:hover{
+	background: #48c9b0;
+}
+#Thor_main.db-c #Thor_main_input button:focus{
+	background: #31A891;
+}
+#Thor_main.db-c #Thor_custom_container {
+	background: #34495e;
+	color: #fff;
+}
+#Thor_main.db-c #Thor_custom_container > label{
+	display: block;
+	font-weight: 700;
+}
+#Thor_main.db-c #Thor_custom_container > span {
+}
+
+#Thor_main.db-c #Thor_custom_container #Thor_custom_input {
+	background: #1ABC9C;
+	color: #fff;
+	border-bottom: 0;	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;		
+}
+#Thor_main.db-c #Thor_custom_container #Thor_custom_input:hover {
+	border-color: #EA6051;
+}
+#Thor_main.db-c #Thor_custom_container button{
+	background: #1ABC9C;	
+}
+#Thor_main.db-c #Thor_custom_container button:hover{
+	background: #1DD3AF;
+}
+#Thor_main.db-c #Thor_custom_container button:active{
+	background: #16A085;
+}
+/**
+ * Dark Red Widget Stylesheet
+ * KBRmedia - http://gempixel.com
+ **/
+#Thor_main.dr-c {
+	margin: 0;
+	background: transparent;
+}
+#Thor_main.dr-c #Thor_message {	
+}
+#Thor_main.dr-c #Thor_title{
+
+}
+#Thor_main.dr-c #Thor_form{
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;		
+	border: 1px solid #921F12;
+}
+#Thor_main.dr-c #Thor_form #Thor_main_input{
+	min-height: 30px;
+}
+#Thor_main.dr-c #Thor_form #Thor_main_input > label {
+	display: none;
+}
+
+#Thor_main.dr-c #Thor_main_input input {	
+	background: #E74C3C;
+	border: 1px solid #E74C3C;
+	color: #fff;
+}
+#Thor_main.dr-c #Thor_main_input input:hover{
+	background: #EA6455;
+	border-color:#C0392B;
+}
+#Thor_main.dr-c #Thor_main_input #Thor_loading{
+
+}
+#Thor_main.dr-c #Thor_main_input button{
+	background: #16a085;
+}
+#Thor_main.dr-c #Thor_main_input button:hover{
+	background: #48c9b0;
+}
+#Thor_main.dr-c #Thor_main_input button:focus{
+	background: #31A891;
+}
+#Thor_main.dr-c #Thor_custom_container {
+	background: #C0392B;
+	color: #fff;
+}
+#Thor_main.dr-c #Thor_custom_container > label{
+	display: block;
+	font-weight: 700;
+}
+#Thor_main.dr-c #Thor_custom_container > span {
+}
+
+#Thor_main.dr-c #Thor_custom_container #Thor_custom_input {
+	background: #e74c3c;
+	color: #fff;
+	border-bottom: 0;	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;		
+}
+#Thor_main.dr-c #Thor_custom_container #Thor_custom_input:hover {
+	border-color: #EA6051;
+}
+#Thor_main.dr-c #Thor_custom_container button{
+	background: #e74c3c;	
+}
+#Thor_main.dr-c #Thor_custom_container button:hover{
+	background: #EA6051;
+}
+#Thor_main.dr-c #Thor_custom_container button:active{
+	background: #C52918;
+}
+/**
+ * Transparent Black Widget Stylesheet
+ * KBRmedia - http://gempixel.com
+ **/
+#Thor_main.tb-c {
+	margin: 0;
+	background: transparent;
+}
+#Thor_main.tb-c #Thor_message {	
+}
+#Thor_main.tb-c #Thor_title{
+
+}
+#Thor_main.tb-c #Thor_form{
+	border: 0;
+}
+#Thor_main.tb-c #Thor_form #Thor_main_input{
+	min-height: 30px;
+}
+#Thor_main.tb-c #Thor_form #Thor_main_input > label {
+	display: none;
+}
+
+#Thor_main.tb-c #Thor_main_input input {
+	background: transparent;
+	border: 1px solid #000;
+	color: #000;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;			
+}
+#Thor_main.tb-c #Thor_main_input input:hover{
+	border-color:#222;
+}
+#Thor_main.tb-c #Thor_main_input #Thor_loading{
+
+}
+#Thor_main.tb-c #Thor_main_input button{
+	background: #16a085;
+}
+#Thor_main.tb-c #Thor_main_input button:hover{
+	background: #48c9b0;
+}
+#Thor_main.tb-c #Thor_main_input button:focus{
+	background: #31A891;
+}
+#Thor_main.tb-c #Thor_custom_container {
+	background: transparent;
+	color: #000;
+	padding: 10px 0;
+}
+#Thor_main.tb-c #Thor_custom_container > label{
+	display: block;
+	font-weight: 700;
+}
+#Thor_main.tb-c #Thor_custom_container > span {
+}
+
+#Thor_main.tb-c #Thor_custom_container #Thor_custom_input {
+	background: transparent;
+	color: #000;
+	border: 1px solid #000;	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;		
+}
+#Thor_main.tb-c #Thor_custom_container #Thor_custom_input:hover {
+	border-color: #222;
+}
+#Thor_main.tb-c #Thor_custom_container button{
+	background: #000;	
+	margin-top: 22px !important;	
+}
+#Thor_main.tb-c #Thor_custom_container button:hover{
+	background: #333;
+}
+#Thor_main.tb-c #Thor_custom_container button:active{
+	background: #000;
+}
+
+/**
+ * Light Green Widget Stylesheet
+ * KBRmedia - http://gempixel.com
+ **/
+#Thor_main.lg-c {
+	margin: 0;
+	background: transparent;
+}
+#Thor_main.lg-c #Thor_message {	
+}
+#Thor_main.lg-c #Thor_title{
+
+}
+#Thor_main.lg-c #Thor_form{
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;		
+	border: 1px solid #92CF5C;
+}
+#Thor_main.lg-c #Thor_form #Thor_main_input{
+	min-height: 30px;
+}
+#Thor_main.lg-c #Thor_form #Thor_main_input > label {
+	display: none;
+}
+
+#Thor_main.lg-c #Thor_main_input input {
+	background: #92CF5C;
+	border: 0;
+	color: #fff;
+}
+#Thor_main.lg-c #Thor_main_input input:hover{
+	background: #A8D97B;
+}
+#Thor_main.lg-c #Thor_main_input #Thor_loading{
+
+}
+#Thor_main.lg-c #Thor_main_input button{
+	background: #16a085;
+}
+#Thor_main.lg-c #Thor_main_input button:hover{
+	background: #48c9b0;
+}
+#Thor_main.lg-c #Thor_main_input button:focus{
+	background: #31A891;
+}
+#Thor_main.lg-c #Thor_custom_container {
+	background: #fff;
+	color: #444;
+}
+#Thor_main.lg-c #Thor_custom_container > label{
+	display: block;
+	font-weight: 700;
+}
+#Thor_main.lg-c #Thor_custom_container > span {
+}
+
+#Thor_main.lg-c #Thor_custom_container #Thor_custom_input {
+	background: #444;
+	color: #fff;
+	border-bottom: 0;	
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;		
+}
+#Thor_main.lg-c #Thor_custom_container #Thor_custom_input:hover {
+	border-color: #000;
+}
+#Thor_main.lg-c #Thor_custom_container button{
+	background: #444;	
+}
+#Thor_main.lg-c #Thor_custom_container button:hover{
+	background: #666;
+}
+#Thor_main.lg-c #Thor_custom_container button:active{
+	background: #000;
+}
+/**
+ * Custom Theme
+ * KBRmedia - http://gempixel.com
+ **/
+#Thor_main.cc-c {
+
+}
+#Thor_main.cc-c #Thor_message {	
+}
+#Thor_main.cc-c #Thor_title{
+
+}
+#Thor_main.cc-c #Thor_form{
+
+}
+#Thor_main.cc-c #Thor_form #Thor_main_input{
+
+}
+#Thor_main.cc-c #Thor_form #Thor_main_input > label {
+
+}
+
+#Thor_main.cc-c #Thor_main_input input {
+
+}
+#Thor_main.cc-c #Thor_main_input input:hover{
+
+}
+#Thor_main.cc-c #Thor_main_input #Thor_loading{
+
+}
+#Thor_main.cc-c #Thor_main_input button{
+	
+}
+#Thor_main.cc-c #Thor_main_input button:hover{
+
+}
+#Thor_main.cc-c #Thor_main_input button:focus{
+
+}
+#Thor_main.cc-c #Thor_custom_container {
+
+}
+#Thor_main.cc-c #Thor_custom_container #PU_custom_input_container{
+
+}
+#Thor_main.cc-c #Thor_custom_container  #PU_custom_input_container > label{
+}
+
+#Thor_main.cc-c #Thor_custom_container  #PU_custom_input_container > span {
+
+}
+
+#Thor_main.cc-c #Thor_custom_container #Thor_custom_input {
+}
+#Thor_main.cc-c #Thor_custom_container #Thor_custom_input:hover {
+
+}
+#Thor_main.cc-c #Thor_custom_container button{
+
+}
+#Thor_main.cc-c #Thor_custom_container button:hover{
+
+}
+#Thor_main.cc-c #Thor_custom_container button:active{
+
+}

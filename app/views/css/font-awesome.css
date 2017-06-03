@@ -93,6 +93,15 @@
 .fa-restore-btn-thor:before {
     content: "\f0ee";
 }
+.fa-support-btn-thor:before {
+    content: "\f1cd";
+}
+.fa-hireus-btn-thor:before {
+    content: "\f2b9";
+}
+.fa-pluginsthemes-btn-thor:before {
+    content: "\f19a";
+}
 .fa-migrate-btn-thor:before  {
   content: "\f079";
 }
@@ -110,4 +119,16 @@
 }
 .fa-close-thor:before {
     content: "\f0d7";
+}
+.fa-support-thor:before{
+  content: "\f1cd";
+}
+.fa-hireus-thor:before{
+  content: "\f1c9";
+}
+.fa-pluginsthemes-thor:before {
+    content: "\f19a";
+}
+.fa-licenses-thor:before {
+    content: "\f15b";  
 }

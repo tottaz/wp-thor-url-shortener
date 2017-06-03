@@ -1,1 +1,0 @@
-# WP-Thor-URL-Shortener

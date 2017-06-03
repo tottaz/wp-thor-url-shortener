@@ -3,8 +3,10 @@
 		<div class="thor-top-menu-section">
 			<div class="thor-dashboard-logo">
 				<div class="thor-dashboard-text text-center">
-					<h2><?php echo "WP THOR <br> FCM"?></h2>
-				</div>	
+					<a href="<?php echo $url.'&tab=dashboard';?>">
+						<img src="<?php echo THORCPTEMP_PLUGIN_URL;?>/app/views/images/wp-thor-logo.png"/>
+					</a>
+				</div>
 			</div>
 			<div class="thor-dashboard-menu">
 				<ul>
@@ -30,4 +32,4 @@
 	</div>
 <?php 
 
-$themes_dir = str_replace('plugins/wp-thor-fcm','themes', THORFCM_PLUGIN_PATH);
+$themes_dir = str_replace('plugins/wp-thor-cbt','themes', THORCPTEMP_PLUGIN_PATH);
