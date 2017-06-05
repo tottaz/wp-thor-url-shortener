@@ -23,7 +23,6 @@ if (!class_exists('ThorURLShortnerAdmin')) {
 				add_action('admin_menu', array($this, 'thor_url_shortener_admin_menu'));
 
 				// Software Licensing and Updates
-				add_action('admin_init', array($this, 'edd_sl_thor_urlshort_plugin_updater'));
 				add_action('admin_init', array($this, 'edd_thor_urlshort_register_option'));
 
 				// Activate, check or deactivate Licenses
@@ -36,7 +35,7 @@ if (!class_exists('ThorURLShortnerAdmin')) {
 
 				add_action('wpmu_new_blog', array($this, 'thor_url_shortener_on_new_blog'), 10, 6); 		
 				add_action('activate_blog', array($this, 'thor_url_shortener_on_new_blog'), 10, 6);
-				add_action('wp_enqueue_scripts', array($this, 'thor_url_shortener_admin_head') );
+				add_action('admin_enqueue_scripts', array($this, 'thor_url_shortener_admin_head') );
 
 				add_filter('admin_footer_text', array($this, 'urlshortener_admin_footer'));
 			}
@@ -148,6 +147,11 @@ if (!class_exists('ThorURLShortnerAdmin')) {
 		        }   
 		    }
 
+		    // Delete Licenses Key
+			delete_option('edd_thor_urlshort_license_key' );
+			delete_option('edd_thor_urlshort_license_status' );
+
+			// Delete plugin options
 			delete_option('thor_url_shortener_settings');
 			delete_option('widget_thor_shortener_widget');
 
@@ -190,9 +194,9 @@ if (!class_exists('ThorURLShortnerAdmin')) {
 		function _thor_url_shortener_activate() {
 		    // Create new table if necessary
 
-//			add_option ( 'thor_cbt','post');
+			add_option ( 'thor_url_shortener_settings','post');
 			// Activate
-//			do_action( 'thor_url_shortener_activate' );
+			do_action( 'thor_url_shortener_activate' );
 		}
 
 		/**
@@ -205,9 +209,9 @@ if (!class_exists('ThorURLShortnerAdmin')) {
 		public function thor_url_shortener_admin_head() {
 
 			// CSS and JS Files used by thor-url-shortener
-			wp_enqueue_style( 'thor-url-shortener-admin-style', THORURLSHORTENER_PLUGIN_URL . '/app/views/css/thor-url-shortener-admin-style.css' );
+			wp_enqueue_style( 'thor-url-shortener-admin-style', THORURLSHORTENER_PLUGIN_URL . '/app/views/css/style.css' );
 
-			wp_enqueue_style('thor-url-shortener-admin-stylesheet', THORURLSHORTENER_PLUGIN_URL . '/app/views/css/thor-url-shortener-admin-stylesheet.css');
+			wp_enqueue_style('thor-url-shortener-admin-stylesheet', THORURLSHORTENER_PLUGIN_URL . '/app/views/css/thor-url-shortener-admin-style.css');
 
 			wp_enqueue_style( 'thor-url-shortener-shortener-font-awesome', THORURLSHORTENER_PLUGIN_URL . '/app/views/css/font-awesome.css' );
 			
@@ -686,25 +690,6 @@ if (!class_exists('ThorURLShortnerAdmin')) {
 			$this->debug_info = $debug_info;
 		}
 
-		//
-		// Licensing and update functions
-		//
-		public function edd_sl_thor_urlshort_plugin_updater() {
-
-			// retrieve our license key from the DB
-			$license_key = trim( get_option( 'edd_thor_urlshort_license_key' ) );
-
-			// setup the updater
-			$edd_updater = new EDD_SL_Plugin_Updater( THORURLSHORTENER_SL_STORE_URL, __FILE__, array(
-					'version' 	=> '1.0', 				// current version number
-					'license' 	=> $license_key, 		// license key (used get_option above to retrieve from DB)
-					'item_name' => THORURLSHORTENER_SL_ITEM_NAME, 	// name of this plugin
-					'author' 	=> 'ThunderBear Design',  // author of this plugin
-					'beta'		=> false
-				)
-			);
-		}
-
 		/**
 		 * Get plugin_info.
 		 *
@@ -722,7 +707,7 @@ if (!class_exists('ThorURLShortnerAdmin')) {
 				$plugin_data    = get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin );
 				$version_string = '';
 				if ( ! empty( $plugin_data['Name'] ) ) {
-					$urlshortener_plugins[] = esc_html( $plugin_data['Name'] ) . ' ' . esc_html__( 'by', 'fcm' ) . ' ' . $plugin_data['Author'] . ' ' . esc_html__( 'version', 'fcm' ) . ' ' . $plugin_data['Version'] . $version_string;
+					$urlshortener_plugins[] = esc_html( $plugin_data['Name'] ) . ' ' . esc_html__( 'by', 'urlshortener' ) . ' ' . $plugin_data['Author'] . ' ' . esc_html__( 'version', 'urlshortener' ) . ' ' . $plugin_data['Version'] . $version_string;
 				}
 			}
 			if ( 0 === count( $urlshortener_plugins ) ) {
@@ -732,12 +717,16 @@ if (!class_exists('ThorURLShortnerAdmin')) {
 			}
 		}
 
+
+		//
+		// Licensing and update functions
+		//
 		function edd_thor_urlshort_register_option() {
 			// creates our settings in the options table
-			register_setting('edd_thor_urlshort_license', 'edd_thor_urlshort_license_key', array($this, 'edd_sanitize_license'));
+			register_setting('edd_thor_urlshort_license', 'edd_thor_urlshort_license_key', array($this, 'edd_thor_urlshort_sanitize_license'));
 		}
 
-		function edd_sanitize_license( $new ) {
+		function edd_thor_urlshort_sanitize_license( $new ) {
 			$old = get_option( 'edd_thor_urlshort_license_key' );
 			if( $old && $old != $new ) {
 				delete_option( 'edd_thor_urlshort_license_status' ); 
@@ -753,7 +742,7 @@ if (!class_exists('ThorURLShortnerAdmin')) {
 		function edd_thor_urlshort_activate_license() {
 
 			// listen for our activate button to be clicked
-			if( isset( $_POST['edd_license_activate'] ) ) {
+			if( isset( $_POST['edd_thor_urlshort_license_activate'] ) ) {
 
 				// run a quick security check
 			 	if( ! check_admin_referer( 'edd_thor_urlshort_nonce', 'edd_thor_urlshort_nonce' ) )
@@ -841,7 +830,7 @@ if (!class_exists('ThorURLShortnerAdmin')) {
 		function edd_thor_urlshort_deactivate_license() {
 
 			// listen for our activate button to be clicked
-			if( isset( $_POST['edd_license_deactivate'] ) ) {
+			if( isset( $_POST['edd_thor_urlshort_license_deactivate'] ) ) {
 
 				// run a quick security check
 			 	if( ! check_admin_referer( 'edd_thor_urlshort_nonce', 'edd_thor_urlshort_nonce' ) )
