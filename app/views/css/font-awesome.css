@@ -129,6 +129,12 @@
 .fa-pluginsthemes-thor:before {
     content: "\f19a";
 }
+.fa-schdeule-thor:before {
+    content: "\f273";
+}
+.fa-backup-thor:before {
+    content: "\f24d";
+}
 .fa-licenses-thor:before {
     content: "\f15b";  
 }
