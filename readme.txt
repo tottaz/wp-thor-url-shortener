@@ -1,10 +1,11 @@
 === WP Thor URL Shortner === 
 Contributors: ThunderBear Design
-Tags: urlshorter, url shorter`
+Tags: urlshorter, url shorterner
 Requires at least: 4.x
-Tested up to: 4.7
-Stable tag: 1.1
+Tested up to: 4.9.x
+Stable tag: 1.2
 License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
