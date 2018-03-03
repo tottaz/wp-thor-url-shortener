@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: WP Thor URL Shortner
-Plugin URI:
-Description: This is a url shortner that works with moln.co.
-Version: 1.2
+Plugin URI: https://thunderbeardesign.com/downloads/wp-thor-url-shortener
+Description: This is a url shortner that works with https://moln.co
+Version: 1.3
 Author: ThunderBear Design
 Author URI: http://thunderbeardesign.com
-Build: 1.2
+Build: 1.3
 */
 
 // Prevent direct access to this file.
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 //
-define('THORURLSHORTENER_VERSION', '1.1');
+define('THORURLSHORTENER_VERSION', '1.3');
 define('THORURLSHORTENER_PLUGIN_URL', WP_PLUGIN_URL . '/' . dirname(plugin_basename(__FILE__)));
 define('THORURLSHORTENER_PLUGIN_PATH', WP_PLUGIN_DIR . '/' . dirname(plugin_basename(__FILE__)));
 define('THORURLSHORTENER_PLUGIN_FILE_PATH', WP_PLUGIN_DIR . '/' . plugin_basename(__FILE__));
@@ -34,7 +34,7 @@ if( !class_exists( 'EDDURLSHORTENER_SL_Plugin_Updater' ) ) {
 $license_key = trim( get_option( 'edd_thor_urlshort_license_key' ) );
 // setup the updater
 $edd_updater = new EDDURLSHORTENER_SL_Plugin_Updater( THORURLSHORTENER_SL_STORE_URL, __FILE__, array( 
-		'version' 	=> '1.2', 			// current version number
+		'version' 	=> '1.3', 			// current version number
 		'license' 	=> $license_key, 	// license key (used get_option above to retrieve from DB)
 		'item_name'	=> urlencode( THORURLSHORTENER_SL_ITEM_NAME ), 	// name of this plugin
 		'author' 	=> 'ThunderBear Design',  // author of this plugin
