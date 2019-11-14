@@ -28,7 +28,7 @@ if (!class_exists('ThorURLShortnerAdmin')) {
 				// Activate, check or deactivate Licenses
 				add_action('admin_init', array($this, 'edd_thor_urlshort_activate_license'));
 				add_action('admin_init', array($this, 'edd_thor_urlshort_deactivate_license'));
-				add_action( 'admin_notices', array($this, 'edd_thor_urlshort_admin_notices'));
+				add_action('admin_notices', array($this, 'edd_thor_urlshort_admin_notices'));
 
 				// Plugin Settings
 				add_action('admin_init', array($this, 'thor_url_shortener_settings_init'));
@@ -209,17 +209,9 @@ if (!class_exists('ThorURLShortnerAdmin')) {
 		public function thor_url_shortener_admin_head() {
 
 			// CSS and JS Files used by thor-url-shortener
-			wp_enqueue_style( 'thor-url-shortener-admin-style', THORURLSHORTENER_PLUGIN_URL . '/app/views/css/style.css' );
-
+			wp_enqueue_style( 'thor-url-shortener-admin-style', THORURLSHORTENER_PLUGIN_URL . '/app/views/css/thor-url-shortener-style.css' );
 			wp_enqueue_style('thor-url-shortener-admin-stylesheet', THORURLSHORTENER_PLUGIN_URL . '/app/views/css/thor-url-shortener-admin-style.css');
-
-			wp_enqueue_style( 'thor-url-shortener-shortener-font-awesome', THORURLSHORTENER_PLUGIN_URL . '/app/views/css/font-awesome.css' );
-			
-			wp_enqueue_style( 'thor-url-shortener-bootstrap-style', THORURLSHORTENER_PLUGIN_URL . '/app/views/css/bootstrap.css' );
-
-			wp_enqueue_style( 'thor-url-shortener-bootstrap-theme-style', THORURLSHORTENER_PLUGIN_URL . '/app/views/css/bootstrap-theme.css' );
-
-			wp_enqueue_script( 'thor-url-shortener-bootstrap-js', THORURLSHORTENER_PLUGIN_URL . '/app/views/js/bootstrap.js' );
+			wp_enqueue_style( 'thor-url-shortener-shortener-font-awesome', THORURLSHORTENER_PLUGIN_URL . '/app/views/css/thor-url-shortener-font-awesome.css' );
 			wp_enqueue_script('thor-url-shortener-admin-js', THORURLSHORTENER_PLUGIN_URL . '/app/views/js/thor-url-shortener-admin-js.js');
 		}
 
@@ -736,7 +728,7 @@ if (!class_exists('ThorURLShortnerAdmin')) {
 		}
 
 		/************************************
-		* this illustrates how to activate a license key
+		* activate a license key
 		*************************************/
 
 		function edd_thor_urlshort_activate_license() {

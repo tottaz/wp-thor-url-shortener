@@ -3,7 +3,7 @@ Contributors: ThunderBear Design
 Tags: urlshorter, url shorterner
 Requires at least: 4.x
 Tested up to: 4.9.x
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Plugin URI: https://thunderbeardesign.com/downloads/wp-thor-url-shortener
@@ -44,6 +44,9 @@ Write an email us on : support@thunderbeardesign.com
 This is first release. 
 
 == Change log ==
+
+= 1.2 = 
+* Check working for WordPress 5.x
 
 = 1.0 =
 * A initial version.

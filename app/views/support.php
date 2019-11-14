@@ -38,7 +38,6 @@ if(!current_user_can('manage_options')) {
 						);
 					?>
 					<div id="debug-info" class="option-wrapper">
-					<h3 class="option-title"><?php esc_html_e( 'Debug Info', 'fcm' ); ?></h3>
 					<table class="form-table rtm-debug-info">
 						<tbody>
 						<?php
